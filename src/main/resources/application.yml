@@ -1,0 +1,27 @@
+# Enable to include message property in default response error model
+#server:
+#  error:
+#    include-message: always
+
+ol:
+  license:
+    key: eyJhbGciOiJSUzI1NiJ9.eyJwcm9kdWN0Ijoib3BlbmxlZ2FjeS1jb3JlIiwic3ViIjoib2wtaHViIiwidmFsaWRfZm9yIjo2MCwiaXNzdWVkX2F0IjoiMjAyMi0wNi0wN1QxNToxODozOS43MTA5NjEzODlaIiwiZXhwaXJ5X2RhdGUiOiIyMDIyLTA4LTA2VDE1OjE4OjM5LjcwOTMwNTMxM1oiLCJjdXN0b21lcl9uYW1lIjoiVk13YXJlIC0gcGVsdGdyb3RoQHZtd2FyZS5jb20iLCJjdXN0b21lcl90eXBlIjoiVFJJQUwiLCJsaWNlbnNlX3R5cGUiOiJTQUFTIiwib2JqZWN0X2xpbWl0cyI6eyJtZXRob2RzIjotMSwicHJlbWl1bU1ldGhvZHMiOi0xLCJwdWJsaXNoZWRQcm9qZWN0cyI6MywiYXBpQ2FsbHMiOjIwMDB9LCJjb25uZWN0b3JzIjpbIioiXX0.KDmFH6C1jZuGCAGowOsDHUxz4gSenFiHrvXIsUWYCGsv3SVwhzUpQjc1gXgQCOyFY2qH4lHC15bp_4C_CoGltHtDLAB3DZ5qodTqByXLH_JNsFiH_fU-Gp8rOModNzE87WOPOojkP1dXSzFAbdUhplMzrcsbOgQO0aI1FFXbQYeYgK3z7SOFXC3qcLJOj7QpDlqqYISYVfgSEN9FF8p83uV0x-OG0ql0_KTE2LRHGaQuWMWLMMX-3Mr-qHywNs6GfTyZ6zZgteE-pVma_EXJcQ90rbMBgSNhoqRSyD5o5D3wrYQhmonI_lkb9noJsvKP9HCKNBRcGB2u-92j169xKA
+  flow:
+    source-provider: HUB
+    hub:
+      url: https://api.ol-hub.com
+      api-key: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJjZWE1ZDM0Mi04M2YzLTQyNzUtYjljZC03NTVmYzA3ZWVkMmUiLCJ0aWQiOiI0ZGFlMGQ0YS0xMDJjLTRlMTctYTk1YS0zYTZjNzc4NjBlYjAiLCJodHRwczovL29sLnRlbmFudHMvcmVnaW9uIjoiVVMiLCJpYXQiOjE2NTUzOTQ1NTMsImlzcyI6Im9sIiwic3ViIjoiYXV0aDB8NjI5ZjZjNGZhN2Q5NmUwMDZmOGJlYjMwIn0.P1oNvkclwQQTMkb2YARXsTIXQG80t7fxLn7DChCQDGhWNWev2OKX_xFYWOcmWZOtjTp8mwIRRIYlWfbYnBXAODuJh7Lkd-KMy_K7aha7W5q-W7zgm4MnwfxO1hvXIO13Rus3UVOIrBSkw0p-Zb6MKaG3mYJ3u7u7Skv-XRqzIlD2H3kXp8WMvPtYwiNyPbWVXALoUu9vGIot1EJwpBm24wcAvWl_Ky2kQGfoI8ZmnNdD_pcPfVPI0rRKB6sBC3YveGYn53b-7i-xsM-__ZDPitP-ilbbVcM6d4FKUdh_P8fd4mGpBlE8ex6e_y7SR1feD6efVnr3Lxg14_yMSwqSfA
+      project-name: account-cics-microservice
+    agent:
+      enabled: false
+
+---
+# accountCicsMicroserviceAccountCics
+
+ol:
+  cics:
+    project:
+      accountCicsMicroserviceAccountCics:
+        uriMap: /ol/demos
+        baseUrl: http://mainframe.openlegacy.com
+
