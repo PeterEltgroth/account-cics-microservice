@@ -33,6 +33,7 @@ repositories {
 }
 
 dependencies {
+  implementation("com.ibm.icu:icu4j:71.1")
   implementation(enforcedPlatform("io.openlegacy:openlegacy-spring-bom:${project.extra["openlegacyVersion"]}"))
   implementation("io.openlegacy.springboot:properties-encryption-autoconfiguration:${project.extra["openlegacyVersion"]}")
   implementation("io.openlegacy.springboot:flow-spring-webflux-autoconfiguration:${project.extra["openlegacyVersion"]}")
