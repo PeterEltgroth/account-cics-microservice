@@ -1,9 +1,0 @@
-accelerator:
-  displayName: Simple Account CICS Microservice
-  description: Contains generated sample OL code
-  iconUrl: https://github.com/PeterEltgroth/account-cics-microservice/raw/main/demo.png
-  tags:
-  - simple
-  - getting-started
-  - CICS-demo
-

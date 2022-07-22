@@ -1,8 +1,8 @@
-plugins{
+plugins {
   java
   `maven-publish`
-  kotlin("jvm")
-  id("org.springframework.boot")
+  kotlin("jvm") version io.ol.core.constant.OLCoreVersions.KOTLIN_VERSION
+  id("org.springframework.boot") version io.ol.core.constant.OLCoreVersions.SPRING_BOOT_VERSION
 }
 
 val projectVersion: String by project
@@ -33,11 +33,12 @@ repositories {
 }
 
 dependencies {
+  val openlegacyVersion: String by project
   implementation("com.ibm.icu:icu4j:71.1")
-  implementation(enforcedPlatform("io.openlegacy:openlegacy-spring-bom:${project.extra["openlegacyVersion"]}"))
-  implementation("io.openlegacy.springboot:properties-encryption-autoconfiguration:${project.extra["openlegacyVersion"]}")
-  implementation("io.openlegacy.springboot:flow-spring-webflux-autoconfiguration:${project.extra["openlegacyVersion"]}")
-  implementation("io.openlegacy.springboot:mf-cics-ts-autoconfiguration:${project.extra["openlegacyVersion"]}")
+  implementation(enforcedPlatform("io.openlegacy:openlegacy-spring-bom:$openlegacyVersion"))
+  implementation("io.openlegacy.springboot:properties-encryption-autoconfiguration:$openlegacyVersion")
+  implementation("io.openlegacy.springboot:flow-spring-webflux-autoconfiguration:$openlegacyVersion")
+  implementation("io.openlegacy.springboot:mf-cics-ts-autoconfiguration:$openlegacyVersion")
   implementation("org.springframework.boot:spring-boot-starter-actuator")
 }
 
