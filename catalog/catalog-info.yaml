@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: account-cics-microservice
+  annotations:
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=account-cics-microservice"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
