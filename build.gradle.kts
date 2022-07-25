@@ -1,8 +1,8 @@
 plugins {
   java
   `maven-publish`
-  kotlin("jvm") version io.ol.core.constant.OLCoreVersions.KOTLIN_VERSION
-  id("org.springframework.boot") version io.ol.core.constant.OLCoreVersions.SPRING_BOOT_VERSION
+  kotlin("jvm")
+  id("org.springframework.boot")
 }
 
 val projectVersion: String by project
