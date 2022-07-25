@@ -1,8 +1,8 @@
 plugins {
   java
   `maven-publish`
-  kotlin("jvm")
-  id("org.springframework.boot")
+  kotlin("jvm") version "1.7.10"
+  id("org.springframework.boot") version "2.7.2"
 }
 
 val projectVersion: String by project
