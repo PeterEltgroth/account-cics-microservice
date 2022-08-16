@@ -5,23 +5,20 @@
 
 ol:
   license:
-    key: eyJhbGciOiJSUzI1NiJ9.eyJwcm9kdWN0Ijoib3BlbmxlZ2FjeS1jb3JlIiwic3ViIjoib2wtaHViIiwidmFsaWRfZm9yIjo2MCwiaXNzdWVkX2F0IjoiMjAyMi0wNi0wN1QxNToxODozOS43MTA5NjEzODlaIiwiZXhwaXJ5X2RhdGUiOiIyMDIyLTA4LTA2VDE1OjE4OjM5LjcwOTMwNTMxM1oiLCJjdXN0b21lcl9uYW1lIjoiVk13YXJlIC0gcGVsdGdyb3RoQHZtd2FyZS5jb20iLCJjdXN0b21lcl90eXBlIjoiVFJJQUwiLCJsaWNlbnNlX3R5cGUiOiJTQUFTIiwib2JqZWN0X2xpbWl0cyI6eyJtZXRob2RzIjotMSwicHJlbWl1bU1ldGhvZHMiOi0xLCJwdWJsaXNoZWRQcm9qZWN0cyI6MywiYXBpQ2FsbHMiOjIwMDB9LCJjb25uZWN0b3JzIjpbIioiXX0.KDmFH6C1jZuGCAGowOsDHUxz4gSenFiHrvXIsUWYCGsv3SVwhzUpQjc1gXgQCOyFY2qH4lHC15bp_4C_CoGltHtDLAB3DZ5qodTqByXLH_JNsFiH_fU-Gp8rOModNzE87WOPOojkP1dXSzFAbdUhplMzrcsbOgQO0aI1FFXbQYeYgK3z7SOFXC3qcLJOj7QpDlqqYISYVfgSEN9FF8p83uV0x-OG0ql0_KTE2LRHGaQuWMWLMMX-3Mr-qHywNs6GfTyZ6zZgteE-pVma_EXJcQ90rbMBgSNhoqRSyD5o5D3wrYQhmonI_lkb9noJsvKP9HCKNBRcGB2u-92j169xKA
+    key: License-Key
   flow:
     source-provider: HUB
     hub:
       url: https://api.ol-hub.com
-      api-key: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJkNThiY2FjZi02ODFlLTRiZTAtOTQ1Ni0zNjgzYjQyZjIzNjIiLCJ0aWQiOiI0ZGFlMGQ0YS0xMDJjLTRlMTctYTk1YS0zYTZjNzc4NjBlYjAiLCJodHRwczovL29sLnRlbmFudHMvcmVnaW9uIjoiVVMiLCJpYXQiOjE2NTg0MzI5NjYsImlzcyI6Im9sIiwic3ViIjoiYXV0aDB8NjI5ZjZjNGZhN2Q5NmUwMDZmOGJlYjMwIn0.Be6z9c6T7gVvcBCR24gl0SU4FHJNmFcjxhauePJ4BTwMVxYausjBgflyms-yXCvjD8JvrZgSFqrYmyM9ukD4h4xmQeApeN16tnlRU31MxQdspAOAiWkeR1Ha2zpWjccy1uj08KpTm8hsyZDVOg2gA_9vtLAFX249NX9-0dGTJ4Ua86ThV82TQssbwcYxOQ6mOxywiV5_M2XcZgtfrHSJXI6EuNk2rGrwPKZy4zo23RUQIj33rKlabHcg0p97q5lgLbLp8VNIc7vHa8fshRICIkO6mSE2sqjeoR6R_uIe2sSiYcXMLi4Db235vddTkfMFJ9PTn8SMflhHUUpNt0qwTA
+      api-key: API-Key
       project-name: account-cics-microservice
     agent:
       enabled: false
 
 ---
-# accountCicsMicroserviceAccountCics
-
 ol:
   cics:
     project:
       accountCicsMicroserviceAccountCics:
         uriMap: /ol/demos
         baseUrl: http://mainframe.openlegacy.com
-
