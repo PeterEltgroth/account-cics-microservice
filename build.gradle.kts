@@ -39,7 +39,7 @@ dependencies {
   implementation("io.openlegacy.springboot:properties-encryption-autoconfiguration:$openlegacyVersion")
   implementation("io.openlegacy.springboot:flow-spring-webflux-autoconfiguration:$openlegacyVersion")
   implementation("io.openlegacy.springboot:mf-cics-ts-autoconfiguration:$openlegacyVersion")
-  implementation("org.springframework.boot:spring-boot-starter-actuator")
+  implementation("org.springframework.boot:spring-boot-devtools")
 }
 
 tasks {
@@ -59,11 +59,18 @@ tasks {
   named<Test>("test") {
     useJUnitPlatform()
   }
+
+  jar {
+    enabled = false
+  }
+
 }
 
-java {
-  withSourcesJar()
-}
+// java {
+  // If more than one JAR is built, the buildpack will not explode the runtime jar so live reload will not work.
+  // Will this trigger a build?
+//   withSourcesJar()
+// }
 
 publishing {
   publications {

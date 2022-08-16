@@ -27,6 +27,7 @@ nbdist/
 target/
 tmp/
 out-tsc/
+bin/ 
 
 ### NPM ###
 /node_modules
