@@ -1,0 +1,75 @@
+accelerator:
+  displayName: Java Function
+  description: Java function powered by Function Buildpacks for Knative
+  iconUrl: https://icons.iconarchive.com/icons/elegantthemes/beautiful-flat-one-color/128/dev-icon.png
+  tags:
+  - account
+  - cics
+  - java
+  - spring
+  - demo
+
+  options:
+    - name: gitUrl
+      label: Git Repository URL
+      display: true
+      description: Git Repository URL of the application's source code
+      inputType: text
+      dataType: string
+      defaultValue: "https://github.com/PeterEltgroth/account-cics-microservice.git"
+
+    - name: gitBranch
+      label: Git Repository Branch
+      display: true
+      description: Git Repository Branch of the application's source code
+      inputType: text
+      dataType: string
+      defaultValue: "main"
+
+    - name: publisherRepository
+      inputType: text
+      label: Repository used to publish the container image
+      defaultValue: container-image-repo
+      description: The repository to use to publish the image built. Specify the server/repository that match those specified for registry.server and registry.repository.
+      required: true
+
+    - name: licenseKey
+      inputType: text
+      label: License Key
+      description: OpenLegacy License Key
+      required: true
+
+    - name: apiKey
+      inputType: text
+      label: API Key
+      description: OpenLegacy API Key
+      required: true
+
+engine:
+  merge:
+    - include: [ "**" ]
+      exclude: [ "config/workload.yaml", "src/main/resources/application.yaml", "Tiltfile", "accelerator-manifest.yaml" ]
+    - include: [ "config/workload.yaml" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+            - text: https://github.com/PeterEltgroth/account-cics-microservice.git
+              with: "#gitUrl"
+            - text: main
+              with: "#gitBranch"
+    - include: [ "src/main/resources/application.yaml" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+             - text: License-Key
+               with: "#licenseKey"
+        - type: ReplaceText
+          substitutions:
+             - text: API-Key
+               with: "#apiKey"
+    - include: [ "Tiltfile" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+             - text: tanzuapplicationplatform.azurecr.io/supply-chain/account-cics-microservice-source
+               with: "#publisherRepository"
