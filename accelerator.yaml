@@ -1,6 +1,6 @@
 accelerator:
-  displayName: Java Function
-  description: Java function powered by Function Buildpacks for Knative
+  displayName: OpenLegacy Proof-of-Concept
+  description: OpenLegacy Proof-of-Concept Accelerator
   iconUrl: https://icons.iconarchive.com/icons/elegantthemes/beautiful-flat-one-color/128/dev-icon.png
   tags:
   - account
