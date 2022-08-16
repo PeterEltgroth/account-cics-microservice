@@ -5,12 +5,12 @@
 
 ol:
   license:
-    key: license-key
+    key: license-key-val
   flow:
     source-provider: HUB
     hub:
       url: https://api.ol-hub.com
-      api-key: api-key
+      api-key: api-key-val
       project-name: account-cics-microservice
     agent:
       enabled: false

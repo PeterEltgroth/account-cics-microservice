@@ -61,11 +61,11 @@ engine:
       chain:
         - type: ReplaceText
           substitutions:
-             - text: license-key
+             - text: license-key-val
                with: "#licenseKey"
         - type: ReplaceText
           substitutions:
-             - text: api-key
+             - text: api-key-val
                with: "#apiKey"
     - include: [ "Tiltfile" ]
       chain:
