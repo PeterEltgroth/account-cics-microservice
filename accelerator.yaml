@@ -65,7 +65,7 @@ engine:
                with: "#licenseKey"
         - type: ReplaceText
           substitutions:
-             - text: api-Key
+             - text: api-key
                with: "#apiKey"
     - include: [ "Tiltfile" ]
       chain:
