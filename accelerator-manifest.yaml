@@ -1,7 +1,7 @@
 apiVersion: accelerator.apps.tanzu.vmware.com/v1alpha1
 kind: Accelerator
 metadata:
-  name: simple
+  name: openlegacy-cics
   namespace: accelerator-system
 spec:
   git:

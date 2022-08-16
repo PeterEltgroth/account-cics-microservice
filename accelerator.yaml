@@ -57,7 +57,7 @@ engine:
               with: "#gitUrl"
             - text: main
               with: "#gitBranch"
-    - include: [ "src/main/resources/application.yaml" ]
+    - include: [ "src/main/resources/application.yml" ]
       chain:
         - type: ReplaceText
           substitutions:
