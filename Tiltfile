@@ -8,14 +8,14 @@ allow_k8s_contexts('arn:aws:eks:us-west-1:580953995046:cluster/1-cl-tap')
 
 k8s_custom_deploy(
     'account-cics-microservice',
-    apply_cmd="tanzu apps workload apply -f config/workload.yml --debug --live-update" +
+    apply_cmd="tanzu apps workload apply -f config/workload.yaml --debug --live-update" +
               " --local-path " + LOCAL_PATH +
               " --source-image " + SOURCE_IMAGE +
               " --namespace " + NAMESPACE +
               " --yes " + 
               OUTPUT_TO_NULL_COMMAND +
               " && kubectl get workload account-cics-microservice --namespace " + NAMESPACE + " -oyaml",
-    delete_cmd="tanzu apps workload delete -f config/workload.yml --namespace " + NAMESPACE + " --yes",
+    delete_cmd="tanzu apps workload delete -f config/workload.yaml --namespace " + NAMESPACE + " --yes",
     deps=['build.gradle.kts', './bin/main'],
     container_selector='workload',
     live_update=[
