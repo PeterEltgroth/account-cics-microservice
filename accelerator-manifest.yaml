@@ -7,4 +7,4 @@ spec:
   git:
     url: https://github.com/PeterEltgroth/account-cics-microservice.git
     ref:
-      branch: accelerator
+      branch: main
