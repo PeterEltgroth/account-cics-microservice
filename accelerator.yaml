@@ -57,8 +57,8 @@ engine:
               with: "#gitUrl"
             - text: REPO_BRANCH
               with: "#gitBranch"
-            # - text: WORKLOAD_NAME
-            #   with: "#projectName"
+            - text: WORKLOAD_NAME
+              with: "#projectName"
     - include: [ "config/workload.yaml" ]
       chain:
         - type: ReplaceText

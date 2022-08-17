@@ -7,7 +7,7 @@
 ## Deploying to Tanzu Application Platform
 
 ### CLI driven
-`tanzu app workload create WORKLOAD_NAME --git-repo REPO_URI --git-branch REPO_BRANCH --type web --label app.kubernetes.io/part-of=WORKLOAD_NAME`
+`tanzu app workload create WORKLOAD_NAME --git-repo REPO_URL --git-branch REPO_BRANCH --type web --label app.kubernetes.io/part-of=WORKLOAD_NAME`
 
 ### Workload manifest driven
 `tanzu app wld apply -f config/workload.yaml`
