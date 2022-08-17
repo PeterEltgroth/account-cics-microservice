@@ -69,7 +69,7 @@ engine:
               with: "#gitBranch"
         - type: ReplaceText
           regex:
-            pattern: ": account-cics-microservice$"
+            pattern: ": account-cics-microservice"
             with: "': ' + #projectName"
     - include: [ "src/main/resources/application.yml" ]
       chain:
