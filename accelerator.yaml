@@ -57,8 +57,8 @@ engine:
               with: "#gitUrl"
             - text: REPO_BRANCH
               with: "#gitBranch"
-            - text: WORKLOAD_NAME
-              with: #projectName
+            # - text: WORKLOAD_NAME
+            #   with: "#projectName"
     - include: [ "config/workload.yaml" ]
       chain:
         - type: ReplaceText
@@ -67,18 +67,16 @@ engine:
               with: "#gitUrl"
             - text: main
               with: "#gitBranch"
-        - type: ReplaceText
-          regex:
-            pattern: "account-cics-microservice$"
-            with: "#projectName"
+        # - type: ReplaceText
+        #   regex:
+        #     pattern: "account-cics-microservice$"
+        #     with: "#projectName"
     - include: [ "src/main/resources/application.yml" ]
       chain:
         - type: ReplaceText
           substitutions:
              - text: license-key-val
                with: "#licenseKey"
-        - type: ReplaceText
-          substitutions:
              - text: api-key-val
                with: "#apiKey"
     - include: [ "Tiltfile" ]
@@ -87,13 +85,11 @@ engine:
           substitutions:
              - text: tanzuapplicationplatform.azurecr.io
                with: "#publisherRepository"
-        - type: ReplaceText
-          substitutions:
-             - text: account-cics-microservice
-               with: "#projectName"
-    - include: [ "catalog/catalog-info.yaml" ]
-      chain:
-        - type: ReplaceText
-          substitutions:
-             - text: account-cics-microservice
-               with: "#projectName"
+            #  - text: account-cics-microservice
+            #    with: "#projectName"
+    # - include: [ "catalog/catalog-info.yaml" ]
+    #   chain:
+    #     - type: ReplaceText
+    #       substitutions:
+    #          - text: account-cics-microservice
+    #            with: "#projectName"
