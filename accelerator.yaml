@@ -48,7 +48,7 @@ accelerator:
 engine:
   merge:
     - include: [ "**" ]
-      exclude: [ "README.md", "config/workload.yaml", "src/main/resources/application.yml", "Tiltfile", "catalog/catalog-info.yaml" "accelerator-manifest.yaml" ]
+      exclude: [ "README.md", "config/workload.yaml", "src/main/resources/application.yml", "Tiltfile", "catalog/catalog-info.yaml", "accelerator-manifest.yaml" ]
     - include: [ "README.md" ]
       chain:
         - type: ReplaceText
