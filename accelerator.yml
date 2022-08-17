@@ -48,8 +48,8 @@ accelerator:
 engine:
   merge:
     - include: [ "**" ]
-      exclude: [ "config/workload.yaml", "src/main/resources/application.yaml", "Tiltfile", "accelerator-manifest.yaml" ]
-    - include: [ "config/workload.yaml" ]
+      exclude: [ "config/workload.yml", "src/main/resources/application.yml", "Tiltfile", "accelerator-manifest.yml" ]
+    - include: [ "config/workload.yml" ]
       chain:
         - type: ReplaceText
           substitutions:
