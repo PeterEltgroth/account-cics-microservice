@@ -1,0 +1,10 @@
+apiVersion: accelerator.apps.tanzu.vmware.com/v1alpha1
+kind: Accelerator
+metadata:
+  name: openlegacy-cics
+  namespace: accelerator-system
+spec:
+  git:
+    url: https://github.com/PeterEltgroth/account-cics-microservice.git
+    ref:
+      branch: accelerator

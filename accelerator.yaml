@@ -1,0 +1,95 @@
+accelerator:
+  displayName: OpenLegacy Proof-of-Concept
+  description: OpenLegacy Proof-of-Concept Accelerator
+  iconUrl: https://icons.iconarchive.com/icons/elegantthemes/beautiful-flat-one-color/128/dev-icon.png
+  tags:
+  - account
+  - cics
+  - java
+  - spring
+  - demo
+
+  options:
+    - name: gitUrl
+      label: Git Repository URL
+      display: true
+      description: Git Repository URL of the application's source code
+      inputType: text
+      dataType: string
+      defaultValue: "https://github.com/PeterEltgroth/account-cics-microservice.git"
+
+    - name: gitBranch
+      label: Git Repository Branch
+      display: true
+      description: Git Repository Branch of the application's source code
+      inputType: text
+      dataType: string
+      defaultValue: "main"
+
+    - name: publisherRepository
+      inputType: text
+      label: Repository used to publish the container image
+      defaultValue: tanzuapplicationplatform.azurecr.io
+      description: The repository to use to publish the image built. Specify the server/repository that match those specified for registry.server and registry.repository.
+      required: true
+
+    - name: licenseKey
+      inputType: text
+      label: License Key
+      description: OpenLegacy License Key
+      required: true
+
+    - name: apiKey
+      inputType: text
+      label: API Key
+      description: OpenLegacy API Key
+      required: true
+
+engine:
+  merge:
+    - include: [ "**" ]
+      exclude: [ "README.md", "config/workload.yaml", "src/main/resources/application.yml", "Tiltfile", "catalog/catalog-info.yaml", "accelerator-manifest.yaml" ]
+    - include: [ "README.md" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+            - text: REPO_URL
+              with: "#gitUrl"
+            - text: REPO_BRANCH
+              with: "#gitBranch"
+            - text: WORKLOAD_NAME
+              with: "#projectName"
+    - include: [ "config/workload.yaml" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+            - text: https://github.com/PeterEltgroth/account-cics-microservice.git
+              with: "#gitUrl"
+            - text: main
+              with: "#gitBranch"
+        - type: ReplaceText
+          regex:
+            pattern: ": account-cics-microservice"
+            with: "': ' + #projectName"
+    - include: [ "src/main/resources/application.yml" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+             - text: license-key-val
+               with: "#licenseKey"
+             - text: api-key-val
+               with: "#apiKey"
+    - include: [ "Tiltfile" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+             - text: tanzuapplicationplatform.azurecr.io
+               with: "#publisherRepository"
+             - text: account-cics-microservice
+               with: "#projectName"
+    - include: [ "catalog/catalog-info.yaml" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+             - text: account-cics-microservice
+               with: "#projectName"
