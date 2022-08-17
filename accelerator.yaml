@@ -85,11 +85,11 @@ engine:
           substitutions:
              - text: tanzuapplicationplatform.azurecr.io
                with: "#publisherRepository"
-            #  - text: account-cics-microservice
-            #    with: "#projectName"
-    # - include: [ "catalog/catalog-info.yaml" ]
-    #   chain:
-    #     - type: ReplaceText
-    #       substitutions:
-    #          - text: account-cics-microservice
-    #            with: "#projectName"
+             - text: account-cics-microservice
+               with: "#projectName"
+    - include: [ "catalog/catalog-info.yaml" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+             - text: account-cics-microservice
+               with: "#projectName"
