@@ -24,7 +24,7 @@ accelerator:
       description: Git Repository Branch of the application's source code
       inputType: text
       dataType: string
-      defaultValue: "docker"
+      defaultValue: "main"
 
     - name: publisherRepository
       inputType: text
