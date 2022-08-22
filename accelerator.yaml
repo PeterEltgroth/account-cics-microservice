@@ -24,7 +24,7 @@ accelerator:
       description: Git Repository Branch of the application's source code
       inputType: text
       dataType: string
-      defaultValue: "main"
+      defaultValue: "docker"
 
     - name: publisherRepository
       inputType: text
@@ -65,7 +65,7 @@ engine:
           substitutions:
             - text: https://github.com/PeterEltgroth/account-cics-microservice.git
               with: "#gitUrl"
-            - text: main
+            - text: docker
               with: "#gitBranch"
         - type: ReplaceText
           regex:

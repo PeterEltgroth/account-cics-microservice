@@ -55,13 +55,13 @@ API Designer / Integration Developer
         ```
         or
         ```
-        tanzu app workload create cics-microservice \
-        --git-repo https://github.com/PeterEltgroth/account-cics-microservice \
-        --git-branch docker \
-        --label app.kubernetes.io/part-of=cics-microservice` \
+        tanzu app workload create WORKLOAD_NAME \
+        --git-repo REPO_URL \
+        --git-branch REPO_BRANCH \
+        --label app.kubernetes.io/part-of=WORKLOAD_NAME` \
         --type web
         ```
-- Provides the URL to OpenAPI endpoints and access information 
+- Provides the URL to OpenAPI endpoints and access information
 
 Appplication Developer
 - Can start making API calls to the OpenAPI endpoints in an existing or new project
