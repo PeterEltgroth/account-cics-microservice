@@ -23,7 +23,7 @@ This proof-of-concept illustrates several integration options between [OpenLegac
 
 ### Personas
 
-The boundary between the personas below will change depending on the [integration style](#integration-options) that best fits a customer. The integration patterns will be documented upon below.
+The boundary between the personas below will change depending on the [integration option](#integration-options) that best fits the customer.
 
 #### API Designer / Integration Developer
 - Knows and has access to OpenLegacy Hub and Tanzu Application Platform
@@ -37,8 +37,8 @@ The boundary between the personas below will change depending on the [integratio
         3. Wrapping the generated service into a TAP Accelerator and publishing it
 #### Application Developer
 - Does not have access to OpenLegacy Hub, the TAP Secure Software Supply Chain or QA/Test/Prod Run clusters
-- Needs access to a TAP Iterate Kubernetes Cluster
-- Only requires basic knowledge of `tanzu` and `kubectl` CLIs
+- Requires access to a TAP Iterate Kubernetes Cluster
+- Only needs basic knowledge of `tanzu` and `kubectl` CLIs
 - Activities
     - Depending on the integration style is provided:
         1. URL to the OpenAPI endpoints
@@ -62,21 +62,21 @@ API Designer / Integration Developer
         --type web
         ```
     - The build
-        ```
-        tanzu app wld apply -f config/workload.yaml`
+        ```bash
+        tanzu app workload apply -f config/workload.yaml
         ```
         or
-        ```
+        ```bash
         tanzu app workload create WORKLOAD_NAME \
         --git-repo REPO_URL \
         --git-branch REPO_BRANCH \
-        --label app.kubernetes.io/part-of=WORKLOAD_NAME` \
+        --label "app.kubernetes.io/part-of=WORKLOAD_NAME" \
         --type web
         ```
 - Provides the URL to OpenAPI endpoints and access information
 
 Appplication Developer
-- Can start making API calls to the OpenAPI endpoints in an existing or new project
+- Starts making API calls to the OpenAPI endpoints in an existing or new project
 
 ### Code Project
 
@@ -84,12 +84,12 @@ API Designer / Integration Developer
 - Provides the developer with the generated .zip or creates a source code repository and provides it
 
 Appplication Developer
-- Extracts or fetches the archive
+- Extracts or fetches/clones the archive
 - Modifies configuration (application properties, workload, Tiltfile, etc.)
 - Ensures they are pointed at the correct development/iterate Kubernetes cluster
 - Runs `tilt up` to deploy and begin development
-    - The [Tiltfile](Tiltfile) applies the [TAP Workload](config/workload.yaml) to the developers namespace and configures live-update to synchronize local file changes to the remote Kubernetes pod.
-    - The initial `tilt up` will take some time as a full image build and push is run. After this a full build will only run if a file is changed that is not hot-loadable (e.g. a gradle build file).
+    - The [Tiltfile](Tiltfile) applies the [TAP Workload](config/workload.yaml) to the developers namespace and configures live update to synchronize local file changes to the remote Kubernetes pod.
+    - The initial `tilt up` takes some time as a full image build and push is run. After this a full build only runs if a non-live updatable file is changed, for example a gradle build file.
 - Runs `tilt down` to delete the TAP workload.
 
 ### Application Accelerator
@@ -106,7 +106,7 @@ Appplication Developer
 
 ### Backstage Plugin
 
-This option is not demonstrated in this proof-of-concept repository. Tanzu Application Platform is built upon [Backstage](https://backstage.io/). Backstage has [many plugins](https://backstage.io/) available, and it should be possible to build an OpenLegacy plging which would interact with OpenLegacy SaaS APIs or the `ol` CLI to consolidate the overall customer experience.
+This option is not demonstrated in this proof-of-concept repository. Tanzu Application Platform is built upon [Backstage](https://backstage.io/). Backstage has [many plugins](https://backstage.io/) available, and it should be possible to build an OpenLegacy plugin which would interact with OpenLegacy SaaS APIs or the `ol` CLI to consolidate the overall customer experience.
 
 ## Modifications to OpenLegacy generated files
 
