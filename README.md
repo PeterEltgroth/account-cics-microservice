@@ -1,5 +1,17 @@
 # OpenLegacy Proof of Concept
 
+- [OpenLegacy Proof of Concept](#openlegacy-proof-of-concept)
+    - [Warnings and Limitations](#warnings-and-limitations)
+    - [Overview](#overview)
+        - [Personas](#personas)
+            - [API Designer / Integration Developer](#api-designer--integration-developer)
+            - [Application Developer](#application-developer)
+    - [Integration Options](#integration-options)
+        - [Deployed Service](#deployed-service)
+        - [Code Project](#code-project)
+        - [Application Accelerator](#application-accelerator)
+        - [Backstage Plugin](#backstage-plugin)
+    - [Modifications to OpenLegacy generated files](#modifications-to-openlegacy-generated-files)
 ## Warnings and Limitations
 
  - The proof-of-concept accelerator adds the user supplied license and api keys to the applications properties. Secrets should be fetched not hardcoded.
