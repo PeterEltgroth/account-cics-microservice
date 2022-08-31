@@ -2,6 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: account-cics-microservice
+  description: OpenLegacy Account CICS example
+  links:
+    - url: https://github.com/PeterEltgroth/account-cics-microservice.git
+      title: GitHub Repo
   annotations:
     "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=account-cics-microservice"
 spec:

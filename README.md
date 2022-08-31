@@ -7,7 +7,7 @@
             - [API Designer / Integration Developer](#api-designer--integration-developer)
             - [Application Developer](#application-developer)
     - [Integration Options](#integration-options)
-        - [Deployed Service](#deployed-service)
+        - [No Code Service](#no-code-service)
         - [Code Project](#code-project)
         - [Application Accelerator](#application-accelerator)
         - [Backstage Plugin](#backstage-plugin)
@@ -47,7 +47,7 @@ The boundary between the personas below will change depending on the [integratio
 
 ## Integration Options
 
-### Deployed Service
+### No Code Service
 
 API Designer / Integration Developer
 - Creates a code repository for the generated service
@@ -106,7 +106,7 @@ Appplication Developer
 
 ### Backstage Plugin
 
-This option is not demonstrated in this proof-of-concept repository. Tanzu Application Platform is built upon [Backstage](https://backstage.io/). Backstage has [many plugins](https://backstage.io/) available, and it should be possible to build an OpenLegacy plugin which would interact with OpenLegacy SaaS APIs or the `ol` CLI to consolidate the overall customer experience.
+Tanzu Application Platform GUI is built on [Backstage](https://backstage.io/) which has many [plugins](https://backstage.io/plugins); however, TAP GUI currently DOES NOT support the installation of third-party plugins.
 
 ## Modifications to OpenLegacy generated files
 
