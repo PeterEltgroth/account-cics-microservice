@@ -40,6 +40,7 @@ dependencies {
   implementation("io.openlegacy.springboot:flow-spring-webflux-autoconfiguration:$openlegacyVersion")
   implementation("io.openlegacy.springboot:mf-cics-ts-autoconfiguration:$openlegacyVersion")
   implementation("org.springframework.boot:spring-boot-devtools")
+  implementation("org.springframework.boot:spring-boot-starter-actuator")
 }
 
 tasks {
