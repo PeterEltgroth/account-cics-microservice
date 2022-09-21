@@ -1,0 +1,28 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: account-cics-microservice
+  labels:
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: account-cics-microservice
+    apis.apps.tanzu.vmware.com/register-api: "true"
+spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
+  - name: api_descriptor
+    value:
+      type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
+      location:
+        baseURL: "http://account-cics-microservice.default.apps.tap.nycpivot.com/"
+        path: "/openapi/openapi.yaml"  # The path to the api documentation
+      system: account-cics-microservice
+      owner: default-team   # The team that owns this
+      description: "A set of API endpoints to manage the resources within the petclinic app."
+  source:
+    git:
+      url: https://github.com/PeterEltgroth/account-cics-microservice.git
+      ref:
+        branch: main
