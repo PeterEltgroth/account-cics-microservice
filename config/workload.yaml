@@ -15,7 +15,7 @@ spec:
     git:
       url: https://github.com/PeterEltgroth/account-cics-microservice.git
       ref:
-        branch: docker
+        branch: main
   # Uncomment to enable buildpack debug level logging
   # build:
   #   env:

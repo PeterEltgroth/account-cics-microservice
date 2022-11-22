@@ -14,9 +14,9 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   - name: api_descriptor
     value:
-      type: openapi   # We currently support any of openapi, aysncapi, graphql, grpc
+      type: openapi # One of: openapi, aysncapi, graphql, grpc
       location:
-        baseURL: "http://account-cics-microservice.default.apps.tap.nycpivot.com/"
+        baseURL: "http://account-cics-microservice.default.full.tap.isveng.com" # Update to your URL
         path: "/openapi/openapi.yaml"  # The path to the api documentation
       system: account-cics-microservice
       owner: default-team   # The team that owns this

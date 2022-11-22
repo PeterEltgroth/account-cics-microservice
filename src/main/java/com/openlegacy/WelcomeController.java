@@ -8,6 +8,6 @@ public class WelcomeController {
 
   @RequestMapping("/")
   public String index(){
-    return "Welcome to the OpenLegacy TAP demo";
+    return "Welcome to the OpenLegacy TAP demo.";
   }
 }
